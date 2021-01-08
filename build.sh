@@ -106,13 +106,8 @@ then
        
 elif [ $1 -eq 13 ]
 then
-       echo "Type in the full directory of rom folder";
-       echo "eg, /home/cyberjalagam/sakura";
-       read ROM_DIR;
-       cat "$ROM_DIR"/out/error.log;
-       echo "====================================================================";
-       echo "Error link:";
-       cat "$ROM_DIR"/out/error.log | curl -F 'f:1=<-' ix.io;
+       chmod +x error.sh;
+       bash error.sh;
        start;
 
 elif [ $1 -eq 14 ]
@@ -122,6 +117,12 @@ then
        start;
 
 elif [ $1 -eq 15 ]
+then
+       chmod +x sefix.sh;
+       bash sefix.sh
+       start;
+
+elif [ $1 -eq 16 ]
 then
 	exit;
 fi
@@ -150,7 +151,8 @@ echo "11 -- Build ProjectSakura for CPH1859"
 echo "12 -- Build ProjectSakura for RMX1831"
 echo "13 -- Show build error"
 echo "14 -- Initialize device repos"
-echo "15 -- Exit"
+echo "15 -- SeFIX for CPH1859 & RMX1831"
+echo "16 -- Exit"
 echo -e "${RST}"
 read -p "Enter choice: " n;
 options $n;
