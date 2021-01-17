@@ -41,7 +41,7 @@ chmod +x env.sh
 bash env.sh
 
 # Lets setup the rom
-cd && mkdir sakura && cd oct
+cd && mkdir oct && cd oct
 repo init -u https://github.com/Octavi-OS/platform_manifest.git -b 11
 repo sync --current-branch --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j8
 
