@@ -20,16 +20,16 @@
 # limitations under the License.
 #
 
-echo "<<<<< © RB INTERNATIONAL NETWORK™ >>>>>"
+echo "<<<<< © The Devil >>>>>"
 
 # Username
 echo -e "\n================== Adding Username ==================\n"
-git config --global user.name "CyberJalagam"
+git config --global user.name "devil-black-786"
 echo -e "\n Added your username!\n"
 
 #Email
 echo -e "\n==================   Adding Email   ==================\n"
-git config --global user.email "rbinternationalnetwork@gmail.com"
+git config --global user.email "fahimahmad904@gmail.com"
 echo -e "\n Added your email!\n"
 
 #List Settings
@@ -41,19 +41,26 @@ chmod +x env.sh
 bash env.sh
 
 # Lets setup the rom
-cd && mkdir sakura && cd sakura
-repo init -u git://github.com/ProjectSakura/android.git -b 11
+cd && mkdir sakura && cd oct
+repo init -u https://github.com/Octavi-OS/platform_manifest.git -b 11
 repo sync --current-branch --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j8
 
-# Revert an selinux commit
-echo -e "\n======================== SeFix ============================\n"
-cp -v ../scripts/patches/Revert-"libsepol:Make-an-unknown-permission-an-error-in-CIL".patch external/selinux
-cd external/selinux && git am Revert-"libsepol:Make-an-unknown-permission-an-error-in-CIL".patch 
+#Face Unlock
+git clone https://bitbucket.org/syberia-project/external_motorola_faceunlock.git -b 11.0 external/motorola/faceunlock
 
+#Private Stuffs
+rm -rf packages/apps/Settings
+git clone https://github.com/Octavi-Broken-Lab/android_packages_apps_Settings -b 1.5 packages/apps/Settings
+
+rm -rf frameworks/base
+git clone https://github.com/Octavi-Broken-Lab/frameworks_base -b 1.5 frameworks/base
+
+rm -rf packages/apps/OctaviLab
+git clone https://github.com/Octavi-Broken-Lab/android_packages_apps_OctaviLab -b 1.5 packages/apps/OctaviLab
 
 # Device tree
 echo -e "\n================== Clonning device tree ==================\n"
-git clone https://github.com/CPH1859/android_device_oppo_CPH1859 -b test-2 device/oppo/CPH1859
+git clone https://github.com/devil-black-786/octavi_oppo_CPH1859 -b oct device/oppo/CPH1859
 
 cp -r ../sakura-priv vendor
 
@@ -67,11 +74,6 @@ git clone https://github.com/CPH1859/android_kernel_oppo_mt6771 kernel/oppo/mt67
 echo -e "\n Done!\n"
 
 source build/envsetup.sh
-lunch lineage_CPH1859-userdebug
-export SAKURA_MAINTAINER=JAISHNAVPRASAD
-export SKIP_ABI_CHECKS=true
-export SAKURA_OFFICIAL=true
-export TARGET_USES_BLUR=true
-export LAWNCHAIR_OUTPUT=true
-make bacon -j8
-echo "<<<<< © RB INTERNATIONAL NETWORK™ >>>>>"
+brunch octavi_CPH1859-userdebug -j8
+
+echo "<<<<< © The Devil ™ >>>>>"
