@@ -62,8 +62,6 @@ git clone https://github.com/Octavi-Broken-Lab/android_packages_apps_OctaviLab -
 echo -e "\n================== Clonning device tree ==================\n"
 git clone https://github.com/devil-black-786/octavi_oppo_CPH1859 -b oct device/oppo/CPH1859
 
-cp -r ../sakura-priv vendor
-
 # Vendor Tree
 echo -e "\n================== Clonning vendor tree ==================\n"
 git clone https://github.com/CPH1859/proprietary_vendor_oppo_CPH1859 vendor/oppo/CPH1859
