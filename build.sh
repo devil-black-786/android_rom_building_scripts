@@ -94,8 +94,8 @@ then
 
 elif [ $1 -eq 11 ]
 then
-       chmod +x sakura-CPH1859.sh;
-       bash sakura-CPH1859.sh;
+       chmod +x octavi-CPH1859.sh;
+       bash octavi-CPH1859.sh;
        start;
 
 elif [ $1 -eq 12 ]
